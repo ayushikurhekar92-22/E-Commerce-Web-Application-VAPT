@@ -1,81 +1,127 @@
-# E-Commerce Web Application Vulnerability Assessment & Penetration Testing
+# E-Commerce Web Application Vulnerability Assessment & Penetration Testing (VAPT)
 
 ## Project Overview
 
-This project demonstrates a practical Web Application Vulnerability Assessment and Penetration Testing (VAPT) exercise conducted on OWASP Juice Shop, an intentionally vulnerable e-commerce application.
+This project focuses on conducting a practical Vulnerability Assessment and Penetration Testing (VAPT) exercise on the OWASP Juice Shop web application in a controlled lab environment.
 
-The assessment was performed in a controlled local lab environment using Kali Linux, Docker, Burp Suite Community Edition, Firefox and cURL.
+The assessment involved identifying, validating, documenting, and analyzing web application security weaknesses using manual security testing techniques and industry-standard security tools.
 
-The objective was to identify, validate and document potential web application security weaknesses through controlled manual testing.
+The objective was to understand common web application vulnerabilities, evaluate their potential security impact, and provide appropriate remediation recommendations.
+
+## Project Objectives
+
+- Identify potential web application security vulnerabilities.
+- Perform manual security testing and validation.
+- Evaluate authentication and access control mechanisms.
+- Analyze application security weaknesses.
+- Document findings with supporting evidence.
+- Recommend suitable mitigation measures.
+
+## Testing Environment
+
+| Component | Details |
+|---|---|
+| Target Application | OWASP Juice Shop |
+| Operating System | Kali Linux |
+| Proxy Tool | Burp Suite Community Edition |
+| Browser | Firefox |
+| Testing Approach | Manual Security Testing |
+| Additional Tools | Nmap, curl |
+| Environment | Controlled Lab Environment |
 
 ## Tools & Technologies
 
-- Kali Linux
-- OWASP Juice Shop
-- Docker
-- Burp Suite Community Edition
-- Firefox
-- cURL
-- HTTP/HTTPS
-- OWASP Top 10
+- **Kali Linux** – Security testing environment.
+- **Burp Suite Community Edition** – Intercepting and analyzing HTTP requests and responses.
+- **Firefox** – Web application testing.
+- **Nmap** – Network reconnaissance and scanning.
+- **curl** – HTTP request and response analysis.
+- **OWASP Juice Shop** – Intentionally vulnerable web application.
 
-## Testing Areas
+## Vulnerability Assessment Methodology
 
-1. SQL Injection
-2. Authentication Testing
-3. Session Management
-4. Broken Access Control (IDOR/BOLA)
-5. Cross-Site Scripting (XSS)
-6. Security Headers and CORS
-7. FTP Directory Listing and File Exposure
+The assessment followed these general stages:
 
-## Key Findings
+1. **Reconnaissance:** Understanding the target application and identifying accessible endpoints.
+2. **Application Mapping:** Reviewing application functionality and HTTP traffic.
+3. **Vulnerability Testing:** Performing manual security tests.
+4. **Validation:** Analyzing application responses to determine whether vulnerabilities were confirmed.
+5. **Risk Analysis:** Evaluating the potential impact of identified weaknesses.
+6. **Documentation:** Preparing vulnerability reports and recording observations.
+7. **Remediation:** Providing recommendations to address identified security weaknesses.
 
-| Finding | Result |
-|---|---|
-| Cross-account basket access (IDOR/BOLA) | Confirmed |
-| Unauthenticated confidential document access | Confirmed |
-| FTP directory listing and file exposure | Confirmed |
-| SQL Injection | Inconclusive |
-| Stored XSS | Inconclusive |
-| DOM XSS | Observed – inconsistent |
-| Session invalidation | Inconclusive |
-| Security Headers and CORS | Informational |
+## Documented Vulnerability Findings
 
-## Methodology
+The following findings are documented in the repository:
 
-1. Lab environment setup and target identification.
-2. Application reconnaissance and endpoint discovery.
-3. HTTP traffic interception using Burp Suite.
-4. Manual security testing using Burp Repeater.
-5. Evidence collection and validation.
-6. Vulnerability classification and severity assessment.
-7. Security recommendations and reporting.
+| Finding ID | Vulnerability | Category |
+|---|---|---|
+| BAC-001 | Broken Access Control (IDOR/BOLA) | Access Control |
+| BAC-002 | Unauthenticated Document Access | Access Control |
+| SEC-002 | FTP Directory Listing and File Exposure | Information Disclosure |
 
-## Recommendations
+### Detailed Finding Reports
 
-- Implement server-side object-level authorization.
-- Restrict access to confidential documents.
+- [BAC-001 – Broken Access Control](Findings/BAC-001-Broken-Access-Control.md)
+- [BAC-002 – Unauthenticated Document Access](Findings/BAC-002-Unauthenticated-Document-Access.md)
+- [SEC-002 – FTP Directory Listing](Findings/SEC-002-FTP-Directory-Listing.md)
+
+Each report contains the vulnerability overview, testing environment, testing procedure, observations, impact, and mitigation recommendations.
+
+## Project Deliverables
+
+The repository includes:
+
+- Individual vulnerability finding reports.
+- Supporting project evidence.
+- Capstone project presentation.
+- Proof of Concept (PoC) report in Excel format.
+- Project documentation.
+
+## Repository Structure
+
+```text
+E-Commerce-Web-Application-VAPT/
+│
+├── Evidence/
+│   ├── 01-Project-Setup/
+│   └── 02-Burp-Suite/
+│
+├── Findings/
+│   ├── BAC-001-Broken-Access-Control.md
+│   ├── BAC-002-Unauthenticated-Document-Access.md
+│   ├── SEC-002-FTP-Directory-Listing.md
+│   └── README.md
+│
+├── Ecommerce_VAPT_Capstone_Presentation.pptx
+├── Ecommerce_VAPT_PoC_Report.xlsx
+└── README.md
+```
+
+*Note: The presentation filename and folder contents should match the actual uploaded files.*
+
+## Security Recommendations
+
+- Enforce server-side authorization checks.
+- Restrict access to sensitive documents and resources.
+- Implement proper authentication and session management.
 - Disable unnecessary directory listing.
-- Use parameterized SQL queries.
-- Implement appropriate input validation and output encoding.
-- Strengthen session invalidation mechanisms.
-- Configure restrictive CORS policies and security headers.
-
-## Project Limitations
-
-- Testing was conducted against an intentionally vulnerable local training application.
-- The assessment was time-bound and manually performed.
-- Some tests remained inconclusive or could not be consistently reproduced.
-- Severity ratings were provisional qualitative assessments, not CVSS-scored.
-- Remediation was recommended but not verified through a completed retest.
+- Apply least-privilege access controls.
+- Validate and securely handle user input.
+- Conduct regular security assessments.
 
 ## Disclaimer
 
-This project was conducted strictly for educational purposes in a controlled lab environment using OWASP Juice Shop. No unauthorized systems or real user accounts were targeted.
+This project was conducted strictly for educational purposes in a controlled lab environment using an intentionally vulnerable application.
+
+No unauthorized testing against real-world systems was performed.
 
 ## Author
 
-*Ayushi Kurhekar*
+**Ayushi Kurhekar**
+
+Cybersecurity | Vulnerability Assessment & Penetration Testing | Web Application Security
+
+**Project:** E-Commerce Web Application VAPT
 
 Cybersecurity | Web Application Security | Vulnerability Assessment & Penetration Testing
